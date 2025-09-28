@@ -1,0 +1,3 @@
+[submodule "themes/flat"]
+	path = themes/flat
+	url = https://git.leafee98.com/leafee98/hugo-theme-flat.git

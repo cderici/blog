@@ -1,0 +1,4 @@
+baseURL = "https://blog.dericilab.live/"
+languageCode = "en-us"
+title = "Musings, Ramblings & Equations"
+theme = "flat"
