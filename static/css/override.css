@@ -1,13 +1,31 @@
 .readmore{display:flex;justify-content:flex-end;margin-top:.5rem}
 
-.month-group summary { cursor: pointer; }
-.month-group[open] summary { font-weight: 600; }
-.month-group ul { margin: .25rem 0 0 1rem; padding: 0; }
-.month-group li { margin: .15rem 0; }
+.month-group summary{cursor:pointer}
+.month-group[open] summary{font-weight:600}
+.month-group ul{margin:.25rem 0 0 1rem;padding:0}
+.month-group li{margin:.15rem 0}
+.side-archive .month-group{margin-bottom:.35rem}
 
-/* indent post titles under month label */
-.side-archive .month-group ul {
-  margin: .25rem 0 0 1rem;   /* tweak 1rem as you like */
-}
+.list-item .categories a,
+.list-item .tags a{color:#ff5722}
 
-.side-archive .month-group { margin-bottom: .35rem; }
+.readmore a{color:#b82c00}
+
+p.readmore a,
+p.readmore a:hover,
+p.readmore a:focus{text-decoration:none!important;border-bottom:0!important;box-shadow:none!important}
+
+.footer a[href$="index.xml"],
+.footer a.rss{color:#ff5722}
+
+a:hover,
+a:focus,
+a:active{color:#ff5722!important}
+
+a:hover svg,
+a:hover svg *{fill:#ff5722;stroke:#ff5722}
+
+.single .taxonomies a,
+.single .taxonomies a:visited{color:#ff5722!important}
+.single .taxonomies a:hover,
+.single .taxonomies a:focus{color:#ff5722!important}
