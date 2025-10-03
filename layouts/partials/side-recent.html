@@ -4,12 +4,23 @@
     </h2>
     <hr />
 
-    <ul>
-        {{ range first 5 .RegularPages.ByDate.Reverse }}
-            <li>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                <small class="post-date">{{ .Date.Format "2006/01/02" }}</small>
-            </li>
+    {{/* Collapsible monthly archive in the sidebar */}}
+{{ $main := .Site.Params.mainSections | default (slice "posts" "post") }}
+{{ $pages := where .Site.RegularPages "Type" "in" $main }}
+{{ $groups := ($pages.ByDate.Reverse).GroupByDate "2006-01" }}
+
+<div class="side-archive">
+  {{ range first 6 $groups }}
+    <details class="month-group" {{ if eq .Key (now.Format "2006-01") }}open{{ end }}>
+      {{/* .Key is YYYY-MM; add '-01' so time() can parse it */}}
+      <summary>{{ (time (printf "%s-01" .Key)).Format "Jan 2006" }}</summary>
+      <ul>
+        {{ range .Pages }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{ end }}
-    </ul>
+      </ul>
+    </details>
+  {{ end }}
+</div>
+
 </div>

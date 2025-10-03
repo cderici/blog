@@ -1,1 +1,13 @@
 .readmore{display:flex;justify-content:flex-end;margin-top:.5rem}
+
+.month-group summary { cursor: pointer; }
+.month-group[open] summary { font-weight: 600; }
+.month-group ul { margin: .25rem 0 0 1rem; padding: 0; }
+.month-group li { margin: .15rem 0; }
+
+/* indent post titles under month label */
+.side-archive .month-group ul {
+  margin: .25rem 0 0 1rem;   /* tweak 1rem as you like */
+}
+
+.side-archive .month-group { margin-bottom: .35rem; }
