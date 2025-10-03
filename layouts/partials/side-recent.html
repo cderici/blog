@@ -1,0 +1,15 @@
+<div class="side-recent">
+    <h2 class="side-title">
+        <a href="{{ .RelPermalink }}">Recent {{ .Section | humanize }}</a>
+    </h2>
+    <hr />
+
+    <ul>
+        {{ range first 5 .RegularPages.ByDate.Reverse }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <small class="post-date">{{ .Date.Format "2006/01/02" }}</small>
+            </li>
+        {{ end }}
+    </ul>
+</div>
